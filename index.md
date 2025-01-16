@@ -5,7 +5,7 @@ layout: page
 # About Me
 
 <!--<img src="https://caihanlin.com/caihanlin.jpg" class="floatpic">-->
-<img src="https://guanyumao.github.io/guanyu2.jpg" class="floatpic">
+<img src="https://guanyumao.github.io/Guanyu2.jpg" class="floatpic">
 
 Here is **Guanyu Mao (毛关宇)**.<br>
 <!--
@@ -14,7 +14,7 @@ If you are interested in any aspect of me, I am always open to discussions and c
 -->
 I am an undergraduate student in the School of Earth and Space Science and Technology,Wuhan University, major in Geophysics.Cureently, I am advised by [Prof. Guoyan Jiang](https://esst.whu.edu.cn/info/1531/1801.htm), doing my research on seismology and seismologic geodetics. I am very interested in eathquake and many other activities about the earth.With my hard work and enthusiasm, I believe I can be qualified researcher one day.<br>
 **<font color="#990000">
-Now,I am actively seeking a PhD position for 2026 Fall admission. If you have any information, please contact me. Thank you!</font>**
+  Now,I am actively seeking a PhD position for 2026 Fall admission. If you have any information, please contact me. Thank you!</font>**
 
 ---
 
