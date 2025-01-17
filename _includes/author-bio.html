@@ -4,8 +4,8 @@
 
 <p>{{ site.owner.bio }}</p>
 
-{% if site.owner.email %}<p style="text-indent:0;margin-top:1.5em;"><a href="mailto:{{ site.owner.email }}" target="_blank"><i class="icon-mail"></i> Email: {{ site.owner.email }}</a></p>{% endif %}
-{% if site.owner.phone %}<p style="text-indent:0;"><a href="{{ site.owner.phone }}" target="_blank"><i class="icon-globe"></i> Phone: {{ site.owner.phone }} </a></p>{% endif %}
+{% if site.owner.email %}<p style="text-indent:0;margin-top:2.0em;"><a href="mailto:{{ site.owner.email }}" target="_blank"><i class="icon-mail"></i> Email: {{ site.owner.email }}</a></p>{% endif %}
+{% if site.owner.phone %}<p style="text-indent:0;"><i class="icon-globe"></i> Phone: {{ site.owner.phone }}</p>{% endif %}
 {% if site.owner.cv %}<p style="text-indent:0;"><a href="{{ site.owner.cv }}"><img src="https://caihanlin.com/images/logo/icons8-cv-100.png" width="16.5" height="16.5"></i> Cick here to download My cv</a></p>{% endif %}
 
 {% if site.owner.twitter %}<p style="text-indent:0;"><a href="https://twitter.com/{{ site.owner.twitter }}"><i class="icon-twitter"></i> Twitter</a></p>{% endif %}
