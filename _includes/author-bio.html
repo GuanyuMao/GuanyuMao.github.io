@@ -4,10 +4,10 @@
 
 <p>{{ site.owner.bio }}</p>
 
-{% if site.owner.email %}<p style="text-indent:0;margin-top:3.0em;"><a href="mailto:{{ site.owner.email }}" target="_blank"> Email: {{ site.owner.email }}</a></p>{% endif %}<br>
-{% if site.owner.phone %}<p style="text-indent:0;"><i class="icon-globe"></i> Phone: {{ site.owner.phone }}</p>{% endif %}<br>
+{% if site.owner.email %}<p style="text-indent:0;margin-top:3.0em;"><a href="mailto:{{ site.owner.email }}" target="_blank"> Email: {{ site.owner.email }}</a></p>{% endif %}
+{% if site.owner.phone %}<p style="text-indent:0;"><i class="icon-globe"></i> Phone: {{ site.owner.phone }}</p>{% endif %}
 {% if site.owner.cv %}<p style="text-indent:0;"><a href="{{ site.owner.cv }}"> Cick here to download My cv</a></p>{% endif %}
-<br>
+
 {% if site.owner.twitter %}<p style="text-indent:0;"><a href="https://twitter.com/{{ site.owner.twitter }}"><i class="icon-twitter"></i> Twitter</a></p>{% endif %}
 
 {% if site.owner.facebook %}<p style="text-indent:0;"><a href="https://facebook.com/{{ site.owner.facebook }}"><i class="icon-facebook"></i> Facebook</a></p>{% endif %}
