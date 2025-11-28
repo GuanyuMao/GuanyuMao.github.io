@@ -12,19 +12,19 @@ Here is **Guanyu Mao (毛关宇)**.<br>
 I am a graduate student in the Department of Engineering at the University of Cambridge, advised by [Prof. Özgür Akan](https://ioe.eng.cam.ac.uk/directory/akan), within [Internet of Everything (IoE) Group](https://ioe.eng.cam.ac.uk/). I also spent a lovely summer research program with [Prof. Pietro Liò](https://www.cl.cam.ac.uk/~pl219/) at [Artificial Intelligence Group](https://www.cl.cam.ac.uk/research/ai/). Prior to Cambridge,  I have worked on System Engineering, Cybersecurity and Wireless Communication with [Prof. Zhezhuang Xu](https://scholar.google.com.hk/citations?user=iZ7LQRkAAAAJ&hl=zh-CN) and [Dr. Meng Yuan](https://myuan27.github.io/). Recently, I was honored to be selected as **AAAI-2024 and KDD-2024 Undergraduate Scholars**.<br>
 If you are interested in any aspect of me, I am always open to discussions and collaborations. Feel free to reach out to me at - hc663 [at] cam.ac.uk
 -->
-I am an undergraduate student in the School of Earth and Space Science and Technology,Wuhan University, major in Geophysics.Cureently, I am advised by [Prof. Guoyan Jiang](https://esst.whu.edu.cn/info/1531/1801.htm), doing my research on seismology and seismologic geodetics. I am very interested in eathquake and many other activities about the earth.With my hard work and enthusiasm, I believe I can be qualified researcher one day.<br>
+I am an undergraduate student in the School of Earth and Space Science and Technology,Wuhan University, major in Geophysics.Cureently, I am advised by [Prof. Guoyan Jiang](https://esst.whu.edu.cn/info/1531/1801.htm), doing my research on seismology. I am very interested in eathquake,especially earthquake rupture processes. With my hard work and enthusiasm, I believe I can be qualified researcher one day.<br>
 **<font color="#990000">
   Now,I am actively seeking a PhD position for 2026 Fall admission. If you have any information, please contact me. Thank you!</font>**
 
 ---
-
+<!--
 ## Research Interests
 <!--
 - [Internet of Everything](https://scholar.google.com/citations?view_op=search_authors&hl=zh-CN&mauthors=label:internet_of_everything)
 - Molecular Communication
 - Wireless Communication
 - AI-powered Communication
--->
+
 - Seismology：The surface deformation monitoring of earthquakes through InSAR and GNSS, the
 velocity structure of the crust and the seismic tomography,Prediction of Earthquake
 - Geodynamics: The movement of the earth’s crust and mantle and their machanism.,the changing
@@ -39,7 +39,7 @@ and mantle,Volcano activities.
 <br>
 
 - **2024.09 - 2025.01**：Wuhan University, Geophysics, advised by Prof. Guoyan Jiang and Postdoc. Yingwen Zhao, I did my research on the inversion of the coseismic deformation data, both the linear and non-linear inversion to get the fault geometry and slip distribution.
-
+-->
 <!--
 ## News and Updates
 
