@@ -4,7 +4,7 @@ permalink: /publications/index.html
 title: Publications
 ---
 <sup>#</sup> denotes corresponding authors
-- **Guanyu Mao**,Yingwen Zhao<sup>#</sup>,Guoyan Jiang<sup>#</sup>, Haoran Dong, Quanshu Zhao, Jian Xu, Junlun Li(2025),Seismogenic Structure and Rupture Characteristics of the 2023 Ms 4.9 Earthquake in Xingwen (Sichuan, China), Earthquake Science, Under Review.[PDF](https://guanyumao.github.io/mypaper/2023Xinwen.pdf)
+- **Guanyu Mao**,Yingwen Zhao<sup>#</sup>,Guoyan Jiang<sup>#</sup>, Haoran Dong, Quanshu Zhao, Jian Xu, Junlun Li(2025),Seismogenic Structure and Rupture Characteristics of the 2023 Ms 4.9 Earthquake in Xingwen (Sichuan, China), Earthquake Science, Under Review.
 
 
 <!--
@@ -53,3 +53,4 @@ To match the ubiquitous connectivity and heterogeneous networking characteristic
   <br>
 
 -->
+
