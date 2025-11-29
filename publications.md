@@ -4,7 +4,7 @@ permalink: /publications/index.html
 title: Publications
 ---
 <sup>#</sup> denotes corresponding authors
-- **Guanyu Mao**,Yingwen Zhao<sup>#</sup>,Guoyan Jiang<sup>#</sup>, Haoran Dong, Quanshu Zhao, Jian Xu, Junlun Li(2025),Seismogenic Structure and Rupture Characteristics of the 2023 Ms 4.9 Earthquake in Xingwen (Sichuan, China), Earthquake Science, Under Review.[PDF](https://guanyumao.github.io/mypaper/2023Xinwen)
+- **Guanyu Mao**,Yingwen Zhao<sup>#</sup>,Guoyan Jiang<sup>#</sup>, Haoran Dong, Quanshu Zhao, Jian Xu, Junlun Li(2025),Seismogenic Structure and Rupture Characteristics of the 2023 Ms 4.9 Earthquake in Xingwen (Sichuan, China), Earthquake Science, Under Review.[PDF](https://guanyumao.github.io/mypaper/2023Xinwen.pdf)
 
 
 <!--
@@ -51,4 +51,5 @@ To match the ubiquitous connectivity and heterogeneous networking characteristic
 - An IoT Garbage Monitoring System for Effective Garbage Management<br>*First-year course design.*<br>**Hanlin Cai**, Jiaqi Hu, Zheng Li, Wei Hong Lim, Mastaneh Mokayef, Chin Hong Wong<br>The 4th International Conference on Computer Engineering, Network and Intelligent Multimedia<br>Surabaya, Indonesia. November, 2022 (EI Compendex).<br>
 
   <br>
+
 -->
