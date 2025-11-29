@@ -12,7 +12,7 @@ owner:
   phone: +86 193 7488 9316
   email: guanyumao@whu.edu.cn
   #cv: https://caihanlin.com/file/CV-HanlinCAI.pdf
-  cv: https://guanyumao.github.io/file/CV_GuanyuMAO.pdf
+  cv: https://guanyumao.github.io/file/CV_GuanyuMao.pdf
 
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   ##
@@ -90,4 +90,5 @@ include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "minimal-mistakes.sublime-project", "minimal-mistakes.sublime-workspace"]
 
 # Latest update in 2023/12/10 by Hanlin Cai.
+
 # Rewritten by Guanyu Mao in 2025/1/16.
