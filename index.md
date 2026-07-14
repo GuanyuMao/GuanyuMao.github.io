@@ -9,7 +9,7 @@ layout: page
 
 Here is **Guanyu Mao (毛关宇)**.<br>
 
-I am a PhD student in the [Graduate Division of Earth and Environmental Sciences](https://www.ees.cuhk.edu.hk/) at **The Chinese University of Hong Kong (CUHK)**, advised by [Prof. Hongfeng Yang](https://www.ees.cuhk.edu.hk/people/academic-staff/prof-yang-hongfeng/). My research focuses on **seismology**, particularly earthquake rupture processes, finite-fault inversion, and strong ground motion.<br>
+I am a PhD student in the [Graduate Division of Earth and Environmental Sciences](https://www.ees.cuhk.edu.hk/) at **The Chinese University of Hong Kong (CUHK)**, advised by [Prof. Hongfeng Yang](https://www.ees.cuhk.edu.hk/staff/prof-yang-hong-feng/). My research focuses on **seismology**, particularly earthquake rupture processes, finite-fault inversion, and strong ground motion.<br>
 Previously, I received my B.S. degree in Geophysics from Wuhan University, where I completed my undergraduate thesis on the **finite-fault inversion of the 2025 Myanmar earthquake** under the supervision of [Prof. Guoyan Jiang](https://esst.whu.edu.cn/info/1531/1801.htm).<br>
 I am passionate about understanding earthquake physics and contributing to seismic hazard assessment. If you share similar interests, feel free to reach out!<br>
 
