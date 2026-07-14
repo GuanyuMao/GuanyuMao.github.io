@@ -6,7 +6,7 @@ title: Publications
 <sup>#</sup> denotes corresponding authors
 - **Mao GY**, Zhao YW, Jiang GY, Dong HR, Zhao QS, Xu J and Li JL (2026). Seismogenic structure and rupture characteristics of the 2023 MS4.9 Xingwen Earthquake in Sichuan (China). *Earthquake Science*, 39. DOI: [10.1016/j.eqs.2026.03.001](https://doi.org/10.1016/j.eqs.2026.03.001)
 
-- **(In Preparation)** Finite-fault inversion of the 2025 Myanmar earthquake: rupture process and slip distribution.
+
 
 
 <!--
