@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guanyu Mao — Seismology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --royal: #0A2463; --gold: #F4D35E; --wine: #D8315B;
+      --cream: #FDFBF6; --ink: #0D1225;
+      --royal-50: #EEF1FA; --gold-200: #FAEBA3;
+      --ink-100: #2C3347; --ink-200: #4C546A; --ink-300: #6D7487;
+      --cream-100: #F8F4EB; --cream-200: #F0EAD9;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --r-lg: 12px; --r-xl: 20px;
+      --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem;
+      --sp-5: 1.5rem; --sp-6: 2rem; --sp-8: 3rem; --sp-12: 4.5rem;
+      --shadow-md: 0 4px 16px rgba(10,36,99,0.10);
+      --shadow-lg: 0 8px 32px rgba(10,36,99,0.12);
+      --shadow-gold: 0 8px 32px rgba(244,211,94,0.2), 0 4px 16px rgba(10,36,99,0.1);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --container: min(1100px, 92vw);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--gold); color: var(--royal); }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--sp-5); }
+    a { color: var(--royal); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--wine); }
+
+    /* Navbar */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--sp-3) clamp(var(--sp-4), 4vw, var(--sp-8));
+      background: rgba(253,251,246,0.88); backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: all 350ms var(--ease);
+    }
+    .navbar.scrolled { border-bottom: 1px solid var(--cream-200); box-shadow: 0 1px 8px rgba(10,36,99,0.06); }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--royal); }
+    .nav-logo .gold-dot { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: var(--sp-6); }
+    .nav-link { font-size: 0.875rem; color: var(--ink-300); letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-link:hover { color: var(--royal); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-sans); font-size: 0.9rem; font-weight: 500;
+      padding: 0.6rem 1.4rem; border-radius: 8px; border: none;
+      cursor: pointer; text-decoration: none; transition: all 0.25s var(--ease);
+    }
+    .btn-cta { background: var(--wine); color: #fff; }
+    .btn-cta:hover { background: #AD2749; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(216,49,91,0.3); }
+    .btn-outline { background: transparent; color: var(--royal); border: 1.5px solid var(--royal); }
+    .btn-outline:hover { background: var(--royal); color: #fff; }
+    .btn-sm { padding: 0.4rem 1rem; font-size: 0.8rem; }
+    .btn-gold { background: var(--gold); color: var(--royal); font-weight: 600; border: none; }
+    .btn-gold:hover { background: #DDB52E; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(244,211,94,0.3); }
+
+    /* Eyebrow */
+    .eyebrow {
+      display: inline-block; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--royal); background: var(--royal-50);
+      padding: 0.3rem 0.85rem; border-radius: 4px; margin-bottom: var(--sp-4);
+    }
+
+    /* Hero */
+    .L1-hero {
+      min-height: 85vh; display: flex; align-items: center;
+      padding: 6rem 0 4rem;
+    }
+    .L1-hero .container {
+      display: grid; grid-template-columns: 1.3fr 1fr;
+      gap: var(--sp-8); align-items: center;
+    }
+    .hero-name {
+      font-family: var(--font-serif); font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 700; font-style: italic; line-height: 1.05;
+      color: var(--ink); margin: var(--sp-3) 0 var(--sp-4);
+      letter-spacing: -0.02em;
+    }
+    .hero-name .gold-dot { color: var(--gold); font-style: normal; }
+    .hero-subtitle {
+      font-family: var(--font-display); font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-style: italic; color: var(--ink-200); line-height: 1.6;
+      max-width: 500px; margin-bottom: var(--sp-5);
+    }
+    .hero-actions { display: flex; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-6); }
+    .hero-meta { font-size: 0.85rem; color: var(--ink-300); line-height: 1.8; }
+    .hero-affil { font-size: 0.9rem; color: var(--ink-200); margin-bottom: var(--sp-1); }
+
+    /* Avatar */
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+    .avatar {
+      border-radius: 50%; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: var(--shadow-gold);
+      position: relative;
+    }
+    .avatar-lg { width: clamp(200px, 26vw, 300px); height: clamp(200px, 26vw, 300px); }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Section common */
+    .section { padding: var(--sp-12) 0; }
+    .section-alt { background: var(--cream-100); }
+    .section-title {
+      font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; color: var(--ink); margin-bottom: var(--sp-6);
+    }
+    .section-title .num {
+      font-family: var(--font-display); font-size: 0.85rem;
+      color: var(--gold); font-weight: 600; margin-right: 0.5rem;
+    }
+    .title-line {
+      display: block; width: 40px; height: 2px;
+      background: var(--gold); margin-top: 0.5rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: var(--sp-8); align-items: start;
+    }
+    .about-text p { font-size: 0.95rem; color: var(--ink-100); margin-bottom: var(--sp-4); max-width: 520px; }
+    .about-highlights { display: flex; gap: var(--sp-6); margin-top: var(--sp-5); }
+    .highlight-item { text-align: center; }
+    .highlight-num { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--royal); line-height: 1; }
+    .highlight-label { font-size: 0.8rem; color: var(--ink-300); margin-top: 0.2rem; }
+
+    /* Education Timeline */
+    .edu-list { margin-bottom: var(--sp-8); }
+    .edu-item { display: flex; gap: var(--sp-4); margin-bottom: var(--sp-5); }
+    .edu-dot {
+      width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+      background: var(--gold); border: 2px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--royal); margin-top: 5px;
+    }
+    .edu-school { font-weight: 600; color: var(--ink); font-size: 1rem; }
+    .edu-degree { font-size: 0.9rem; color: var(--ink-200); }
+    .edu-date { font-size: 0.8rem; color: var(--gold); font-weight: 500; letter-spacing: 0.03em; }
+    .edu-detail { font-size: 0.85rem; color: var(--ink-300); margin-top: 0.2rem; }
+
+    /* Research Experience */
+    .exp-item { margin-bottom: var(--sp-5); padding: var(--sp-5); background: #fff; border-radius: var(--r-lg); border: 1px solid var(--cream-200); transition: all 300ms var(--ease); }
+    .exp-item:hover { box-shadow: var(--shadow-md); border-color: var(--cream); }
+    .exp-title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--royal); margin-bottom: var(--sp-1); }
+    .exp-meta { font-size: 0.8rem; color: var(--ink-300); margin-bottom: var(--sp-2); }
+    .exp-desc { font-size: 0.9rem; color: var(--ink-100); line-height: 1.6; }
+
+    /* Awards */
+    .award-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+    .award-item { font-size: 0.9rem; color: var(--ink-100); padding: var(--sp-2) var(--sp-3); background: #fff; border-radius: 8px; border: 1px solid var(--cream-200); }
+    .award-year { color: var(--gold); font-weight: 500; margin-right: 0.5rem; font-size: 0.8rem; }
+
+    /* Publications */
+    .pub-card {
+      background: #fff; border: 1px solid var(--cream-200);
+      border-radius: var(--r-lg); padding: var(--sp-5);
+      margin-bottom: var(--sp-4);
+      transition: all 300ms var(--ease);
+    }
+    .pub-card:hover { box-shadow: var(--shadow-md); border-color: var(--cream); transform: translateY(-2px); }
+    .pub-authors { font-size: 0.9rem; color: var(--ink-200); }
+    .pub-authors u { color: var(--ink); text-decoration: none; font-weight: 500; }
+    .pub-title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--royal); margin: var(--sp-2) 0; line-height: 1.4; }
+    .pub-journal { font-size: 0.85rem; color: var(--ink-300); }
+    .pub-journal i { font-style: italic; }
+    .pub-doi { display: inline-block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--wine); font-weight: 500; }
+    .pub-doi:hover { text-decoration: underline; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+    .skill-cat { background: #fff; border-radius: var(--r-lg); padding: var(--sp-5); border: 1px solid var(--cream-200); }
+    .skill-cat h3 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: var(--royal); margin-bottom: var(--sp-3); }
+    .skill-cat ul { list-style: none; }
+    .skill-cat li { font-size: 0.85rem; color: var(--ink-100); padding: 0.25rem 0; position: relative; padding-left: var(--sp-4); }
+    .skill-cat li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+    /* Hobbies */
+    .hobby-tags { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+    .hobby-tag { padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.85rem; background: var(--royal-50); color: var(--royal); border: 1px solid transparent; transition: all 0.2s; }
+    .hobby-tag:hover { border-color: var(--gold); background: #fff; }
+
+    /* Leadership */
+    .lead-item { margin-bottom: var(--sp-3); }
+    .lead-role { font-weight: 500; color: var(--ink); font-size: 0.9rem; }
+    .lead-org { font-size: 0.85rem; color: var(--ink-200); }
+    .lead-date { font-size: 0.78rem; color: var(--ink-300); }
+
+    /* Contact */
+    .dark-panel {
+      background: radial-gradient(ellipse at 30% 20%, #1A3A7A, #0A2463 70%);
+      border-radius: var(--r-xl); padding: var(--sp-12) var(--sp-8);
+      text-align: center; color: #fff; position: relative; overflow: hidden;
+    }
+    .dark-panel::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 250px; height: 250px;
+      background: radial-gradient(circle, rgba(244,211,94,0.08), transparent);
+      border-radius: 50%;
+    }
+    .dark-panel h2 {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700; margin-bottom: var(--sp-3); position: relative;
+    }
+    .dark-panel p { color: rgba(255,255,255,0.7); font-size: 0.95rem; max-width: 500px; margin: 0 auto var(--sp-6); position: relative; }
+    .contact-email {
+      font-family: var(--font-display); font-size: 1.3rem; font-style: italic;
+      color: var(--gold); display: inline-block; margin-bottom: var(--sp-6); position: relative;
+    }
+    .contact-email:hover { color: #fff; }
+    .contact-phone { font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: var(--sp-6); position: relative; }
+
+    /* Social */
+    .social-links { display: flex; gap: var(--sp-3); justify-content: center; }
+    .social-link {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; background: rgba(244,211,94,0.12); color: var(--gold);
+      transition: all 250ms var(--ease); font-size: 0.9rem; font-weight: 500; text-decoration: none;
+    }
+    .social-link:hover { background: var(--gold); color: var(--royal); transform: translateY(-2px); }
+    .social-link-light { background: var(--royal-50); color: var(--royal); }
+    .social-link-light:hover { background: var(--gold); color: var(--royal); }
+
+    /* Footer */
+    footer { text-align: center; padding: var(--sp-6) 0; color: var(--ink-300); font-size: 0.8rem; border-top: 1px solid var(--cream-200); margin-top: var(--sp-8); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(25px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 100ms; }
+    .reveal-d2 { transition-delay: 200ms; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links .nav-link.nav-hide { display: none; }
+      .L1-hero .container { grid-template-columns: 1fr; text-align: center; gap: var(--sp-6); }
+      .hero-visual { order: -1; }
+      .avatar-lg { width: 180px; height: 180px; }
+      .hero-subtitle { margin: 0 auto var(--sp-5); }
+      .hero-actions { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; text-align: center; }
+      .about-text p { max-width: 100%; }
+      .about-highlights { justify-content: center; }
+      .section-title { text-align: center; }
+      .title-line { margin: 0.5rem auto 0; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .award-grid { grid-template-columns: 1fr; }
+      .dark-panel { padding: var(--sp-8) var(--sp-4); }
+    }
+    @media (max-width: 480px) {
+      .L1-hero { min-height: auto; padding-top: 5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">Guanyu Mao<span class="gold-dot">.</span></a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link nav-hide">About</a>
+      <a href="#research" class="nav-link nav-hide">Research</a>
+      <a href="#publications" class="nav-link nav-hide">Publications</a>
+      <a href="#contact" class="btn btn-cta btn-sm">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ═══ Hero ═══ -->
+  <section class="L1-hero">
+    <div class="container">
+      <div class="hero-text">
+        <span class="eyebrow reveal">Seismologist · PhD Student</span>
+        <h1 class="hero-name reveal reveal-d1">Guanyu Mao<span class="gold-dot">.</span></h1>
+        <p class="hero-subtitle reveal reveal-d2">Studying earthquake rupture processes through finite-fault inversion and strong-motion data.</p>
+        <div class="hero-affil reveal reveal-d2">The Chinese University of Hong Kong · Advised by Prof. Hongfeng Yang</div>
+        <div class="hero-actions reveal reveal-d2" style="margin-top:var(--sp-4);">
+          <a href="#publications" class="btn btn-cta">Publications →</a>
+          <a href="file/CV_GuanyuMao.pdf" class="btn btn-outline" target="_blank">Download CV</a>
+        </div>
+        <div class="social-links" style="justify-content:flex-start" class="reveal reveal-d2">
+          <a href="mailto:guanyumao@whu.edu.cn" class="social-link social-link-light" aria-label="Email">✉</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal reveal-d1">
+        <div class="avatar avatar-lg">
+          <img src="Guanyu2.jpg" alt="Guanyu Mao">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ About ═══ -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="num">01</span>About<span class="title-line"></span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="reveal reveal-d1">I am a PhD student in the Graduate Division of Earth and Environmental Sciences at <strong>The Chinese University of Hong Kong</strong>, advised by <strong>Prof. Hongfeng Yang</strong>. My research focuses on <strong>seismology</strong>, particularly earthquake rupture processes, finite-fault inversion, and strong ground motion.</p>
+          <p class="reveal reveal-d2">Previously, I received my B.S. in Geophysics from <strong>Wuhan University</strong> (advisor: Prof. Guoyan Jiang), where I completed my undergraduate thesis on the finite-fault inversion of the 2025 Myanmar earthquake.</p>
+          <p class="reveal reveal-d2">I am passionate about understanding earthquake physics and contributing to seismic hazard assessment. If you share similar interests, feel free to reach out!</p>
+          <div class="about-highlights reveal">
+            <div class="highlight-item"><div class="highlight-num">3.88</div><div class="highlight-label">GPA</div></div>
+            <div class="highlight-item"><div class="highlight-num">2/17</div><div class="highlight-label">Class Rank</div></div>
+            <div class="highlight-item"><div class="highlight-num">6</div><div class="highlight-label">Awards</div></div>
+          </div>
+        </div>
+        <div class="about-photo reveal" style="display:flex;align-items:center;justify-content:center;">
+          <img src="Guanyu2.jpg" alt="Guanyu Mao" style="width:100%;max-width:320px;border-radius:var(--r-xl);border:2px solid var(--cream-200);box-shadow:var(--shadow-md);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Education & Research ═══ -->
+  <section class="section" id="research">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="num">02</span>Education &amp; Research<span class="title-line"></span></h2>
+
+      <div class="edu-list">
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div>
+            <div class="edu-school">The Chinese University of Hong Kong</div>
+            <div class="edu-degree">PhD in Earth and Environmental Sciences</div>
+            <div class="edu-date">2026 — Present</div>
+            <div class="edu-detail">Advisor: Prof. Hongfeng Yang</div>
+          </div>
+        </div>
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div>
+            <div class="edu-school">Wuhan University</div>
+            <div class="edu-degree">B.S. in Geophysics</div>
+            <div class="edu-date">2022 — 2026</div>
+            <div class="edu-detail">Advisor: Prof. Guoyan Jiang · GPA 3.88/4.00 · Rank 2/17 · TOEFL 103</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-title">Finite-Fault Inversion of the 2025 Myanmar Earthquake</div>
+        <div class="exp-meta">Supervisors: Prof. H. Yang (CUHK) &amp; Prof. G. Jiang (WHU) · Aug 2025 — Present</div>
+        <div class="exp-desc">Conducting finite-fault inversion to resolve the rupture process and slip distribution of the 2025 Myanmar Mw7.7 earthquake. Using TauP for phase arrival estimation and computing rupture speed from near-fault observations.</div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-title">Seismogenic Structure and Rupture of the 2023 Xingwen Ms4.9 Earthquake</div>
+        <div class="exp-meta">Supervisor: Prof. G. Jiang (WHU) · Jun 2023 — Jun 2025</div>
+        <div class="exp-desc">Processed InSAR data (Sentinel-1) with GAMMA to extract coseismic deformation. Conducted fault geometry and slip distribution inversion. Applied ETAS model to analyze aftershock triggering behavior.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Publications ═══ -->
+  <section class="section section-alt" id="publications">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="num">03</span>Publications<span class="title-line"></span></h2>
+      <div class="pub-card reveal">
+        <div class="pub-authors"><u>Guanyu Mao</u>, Yingwen Zhao*, Guoyan Jiang*, Haoran Dong, Quanshu Zhao, Jian Xu, Junlun Li</div>
+        <div class="pub-title">Seismogenic Structure and Rupture Characteristics of the 2023 Ms 4.9 Earthquake in Xingwen (Sichuan, China)</div>
+        <div class="pub-journal"><i>Earthquake Science</i>, 39 (2026)</div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.eqs.2026.03.001" target="_blank">DOI: 10.1016/j.eqs.2026.03.001 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Awards & Skills ═══ -->
+  <section class="section" id="awards">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="num">04</span>Awards &amp; Skills<span class="title-line"></span></h2>
+
+      <div class="award-grid reveal" style="margin-bottom:var(--sp-8);">
+        <div class="award-item"><span class="award-year">2025</span>Yu Gang Song Xiao Scholarship</div>
+        <div class="award-item"><span class="award-year">2025</span>First Prize Scholarship, Wuhan University</div>
+        <div class="award-item"><span class="award-year">2024</span>First Prize Scholarship, Wuhan University</div>
+        <div class="award-item"><span class="award-year">2024</span>First Prize of Zheng Geru Scholarship</div>
+        <div class="award-item"><span class="award-year">2023</span>Second Prize Scholarship, Wuhan University</div>
+        <div class="award-item"><span class="award-year">2023</span>National Encouragement Scholarship</div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-cat reveal"><h3>Programming</h3><ul><li>Python</li><li>MATLAB</li><li>Shell</li><li>C / C++</li></ul></div>
+        <div class="skill-cat reveal reveal-d1"><h3>Seismology Tools</h3><ul><li>GMT / PyGMT</li><li>SAC</li><li>ObsPy</li><li>GAMMA (InSAR)</li></ul></div>
+        <div class="skill-cat reveal reveal-d2"><h3>Other</h3><ul><li>Git</li><li>LaTeX</li><li>Markdown</li><li>HTML / CSS</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Leadership & Activities ═══ -->
+  <section class="section section-alt" id="activities">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="num">05</span>Leadership &amp; Activities<span class="title-line"></span></h2>
+      <div class="about-grid">
+        <div>
+          <div class="lead-item reveal"><div class="lead-role">Head of Project Division</div><div class="lead-org">Youth Volunteers Association, WHU</div><div class="lead-date">Jun 2023 — Jun 2024</div></div>
+          <div class="lead-item reveal"><div class="lead-role">Vice Captain</div><div class="lead-org">College Choir, WHU</div><div class="lead-date">Oct 2023 — Oct 2024</div></div>
+          <div class="lead-item reveal"><div class="lead-role">Class Monitor</div><div class="lead-org">Geophysics Class of 2022, WHU</div><div class="lead-date">Sept 2022 — Present</div></div>
+          <div class="lead-item reveal"><div class="lead-role">Freshman Assistant</div><div class="lead-org">Geophysics Class of 2025, WHU</div><div class="lead-date">Jul 2025 — Present</div></div>
+        </div>
+        <div>
+          <div class="exp-item reveal">
+            <div class="exp-title">13th University Scholars Leadership Symposium (USLS)</div>
+            <div class="exp-meta">Delegate · Kuala Lumpur, Malaysia · Aug 2025</div>
+            <div class="exp-desc">Collaborated with representatives from over 80 countries on humanitarian and sustainability challenges. Participated in Kindness Day volunteer activities with refugee children.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Contact ═══ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="dark-panel reveal">
+        <h2>Let's talk about earthquakes.</h2>
+        <p>If you share similar research interests or have any questions, feel free to reach out. I'm always open to discussions and collaborations.</p>
+        <a href="mailto:guanyumao@whu.edu.cn" class="contact-email">guanyumao@whu.edu.cn</a>
+        <div class="contact-phone">(+86) 193-7488-9316</div>
+        <div class="social-links">
+          <a href="mailto:guanyumao@whu.edu.cn" class="social-link" aria-label="Email">✉</a>
+        </div>
+        <div style="margin-top:var(--sp-6);">
+          <a href="mailto:guanyumao@whu.edu.cn" class="btn btn-gold" style="padding:0.8rem 2.5rem;font-size:1rem;">Send email →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Guanyu Mao. Published with Feihong Design System.</footer>
+
+  <script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    // Scroll reveal
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
